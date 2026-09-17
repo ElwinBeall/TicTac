@@ -265,5 +265,10 @@ bool check_win(const uint8_t winning_lines[][COLS], uint8_t board[][COLS], uint8
             return *is_game_over = true;
         }
     }
+    if (!cell_available(board))
+    {
+        *winner = 1;
+        return *is_game_over = true;
+    }
     return *is_game_over = false;
 }
